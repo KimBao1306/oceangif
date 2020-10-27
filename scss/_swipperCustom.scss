@@ -1,0 +1,101 @@
+.is-slider {
+    position: relative;
+    .swiper-container {
+        overflow: hidden;
+    }
+    &.swiper-nav{
+        .swiper-pagination {
+           display: none;
+        }
+        @include max-media(1200px){
+            .swiper-button-next,
+            .swiper-button-prev{
+                display: none;
+            }
+            .swiper-pagination {
+                display: block;
+            }
+        }
+    }
+    &.swiper-pag{
+        .swiper-button-next,
+        .swiper-button-prev{
+            display: none;
+        }
+    }
+}
+.swiper-button-prev,
+.swiper-button-next {
+    width: 44px;
+    height: 44px;
+    background-color: $main-color;
+    color: #fff;
+    outline: 0;
+    &::after {
+        font-family: FontAweSome;
+        font-size: 20px;
+    }
+}
+.swiper-button-prev {
+    left: -64px;
+    &::after {
+        content: "\f177";
+    }
+}
+.swiper-button-next {
+    right: -64px;
+    &::after {
+        content: "\f178";
+    }
+}
+.swiper-pagination {
+    position: static;
+    margin-top: 15px;
+    @include max-media(768px) {
+        margin-top: 10px;
+    }
+}
+.swiper-pagination-bullet-active {
+    background-color: $main-color;
+}
+.swiper-wrapper {
+    margin: -15px;
+    width: auto;
+    .swiper-slide {
+        padding: 15px;
+        height: auto;
+    }
+    @include max-media(768px) {
+        margin: -7.5px;
+        .swiper-slide {
+            padding: 7.5px;
+        }
+    }
+}
+.swiper-button-wrap {
+    display: flex;
+    .swiper-button-prev,
+    .swiper-button-next {
+        position: static;
+        color: #fff;
+        background-color: $main-color;
+        margin-top: 0;
+        width: 35px;
+        height: 35px;
+        display: inline-flex;
+        &:hover {
+            background-color: $main-color;
+        }
+    }
+    .swiper-button-prev {
+        &::after {
+            content: "\f104";
+        }
+    }
+    .swiper-button-next {
+        margin-left: 5px;
+        &::after {
+            content: "\f105";
+        }
+    }
+}
